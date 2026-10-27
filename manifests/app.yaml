@@ -33,3 +33,16 @@ spec:
     name: http
   selector:
     app: data-leak-detector
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: data-leak-detector-route
+  labels:
+    app: data-leak-detector
+spec:
+  to:
+    kind: Service
+    name: data-leak-detector-svc
+  port:
+    targetPort: http
