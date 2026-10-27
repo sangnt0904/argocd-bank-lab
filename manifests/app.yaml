@@ -15,8 +15,9 @@ spec:
         app: data-leak-detector
     spec:
       containers:
-      - name: web
-        image: nginxinc/nginx-unprivileged:alpine
+      - name: python-scanner
+        image: leak-detector-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---
