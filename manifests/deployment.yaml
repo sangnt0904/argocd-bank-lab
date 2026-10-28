@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: account-service
-        image: image-registry.openshift-image-registry.svc:5000/bank-lab/account-service:v1.0.1
+        image: image-registry.openshift-image-registry.svc:5000/bank-lab/account-service:v1.0.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
