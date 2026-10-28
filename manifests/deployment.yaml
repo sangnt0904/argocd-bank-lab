@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bank-account-service
+  namespace: bank-lab
+  labels:
+    app: bank-account-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bank-account-service
+  template:
+    metadata:
+      labels:
+        app: bank-account-service
+    spec:
+      containers:
+      - name: account-service
+        image: image-registry.openshift-image-registry.svc:5000/bank-lab/account-service:v1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: http
