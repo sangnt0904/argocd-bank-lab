@@ -21,7 +21,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'account-service:v1.0.2'
+      name: 'account-service:v1.0.3'
   triggers:
     - type: ConfigChange
   successfulBuildsHistoryLimit: 3
