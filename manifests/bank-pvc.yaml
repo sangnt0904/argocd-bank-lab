@@ -2,11 +2,11 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: bank-database-pvc
-  namespace: bank-lab # Nằm trong namespace của dự án bank-lab
+  namespace: bank-lab
 spec:
   accessModes:
-    - ReadWriteOnce # Chỉ cho phép 1 Pod mount ổ cứng này ở một thời điểm
-  storageClassName: bank-fast-storage # Trỏ chính xác đến StorageClass vừa tạo ở trên
+    - ReadWriteOnce
+  storageClassName: crc-csi-hostpath-provisioner # Đổi thành tên chuẩn có sẵn của CRC
   resources:
     requests:
-      storage: 10Gi # Yêu cầu cấp phát 10GB dung lượng
+      storage: 10Gi
