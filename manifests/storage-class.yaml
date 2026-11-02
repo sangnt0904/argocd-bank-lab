@@ -1,0 +1,9 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: bank-fast-storage # Tên StorageClass tự định nghĩa
+provisioner: kubernetes.io/aws-ebs # Hoặc driver CSI tương ứng với môi trường cụ thể của bạn
+parameters:
+  type: gp3
+reclaimPolicy: Retain # Giữ lại dữ liệu ngay cả khi PVC bị xóa, tránh mất dữ liệu ngân hàng
+volumeBindingMode: WaitForFirstConsumer
